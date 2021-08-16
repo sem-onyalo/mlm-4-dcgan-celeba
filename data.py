@@ -1,5 +1,4 @@
 from matplotlib import pyplot
-from mtcnn.mtcnn import MTCNN
 from numpy.random import randn, randint
 from numpy import ones, zeros
 from numpy import asarray, savez_compressed, load
@@ -63,6 +62,7 @@ def plotDataset(dataset, sampleNum, sampleOutputPath='img_align_celeba/sample.pn
     pyplot.close()
 
 def prepareDataset(imageDirectory, outputFilePath, sampleNum):
+    from mtcnn.mtcnn import MTCNN
     model = MTCNN()
     faces = list()
     for filename in listdir(imageDirectory):
